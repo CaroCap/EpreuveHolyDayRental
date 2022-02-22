@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayRental.Common", "Hol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayRental.BLL", "HolidayRental.BLL\HolidayRental.BLL.csproj", "{FAEB1C74-B9A8-4EE4-9544-E9E88A84FCF0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP", "ASP", "{04DB647D-C1B6-47E1-829C-E6B9C31FC373}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{8020D524-9DA0-42F3-906F-C726363F865F} = {04DB647D-C1B6-47E1-829C-E6B9C31FC373}
 		{E1BF81FF-5931-4C1A-BC6B-588A161B2C1D} = {4C078EC4-660A-43F4-BDEC-D68507FFC9BE}
 		{FAEB1C74-B9A8-4EE4-9544-E9E88A84FCF0} = {FC540781-E1F5-4CCE-8CAE-54AF44990F65}
 	EndGlobalSection

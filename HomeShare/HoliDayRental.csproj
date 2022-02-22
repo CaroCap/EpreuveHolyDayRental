@@ -8,4 +8,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HolidayRental.BLL\HolidayRental.BLL.csproj" />
+    <ProjectReference Include="..\HolidayRental.Common\HolidayRental.Common.csproj" />
+  </ItemGroup>
+
 </Project>

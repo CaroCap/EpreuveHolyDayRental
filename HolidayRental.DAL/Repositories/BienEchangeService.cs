@@ -75,12 +75,9 @@ namespace HolidayRental.DAL.Repositories
                     SqlParameter p_CodePostal = new SqlParameter { ParameterName = "CodePostal", Value = entity.CodePostal };
                     SqlParameter p_Photo = new SqlParameter { ParameterName = "Photo", Value = entity.Photo };
                     SqlParameter p_AssuranceObligatoire = new SqlParameter { ParameterName = "AssuranceObligatoire", Value = entity.AssuranceObligatoire };
-                    //SqlParameter p_isEnabled = new SqlParameter { ParameterName = "isEnabled", Value = entity.isEnabled };
-                    //SqlParameter p_DisabledDate = new SqlParameter { ParameterName = "DisabledDate", Value = entity.DisabledDate };
                     SqlParameter p_Latitude = new SqlParameter { ParameterName = "Latitude", Value = entity.Latitude };
                     SqlParameter p_Longitude = new SqlParameter { ParameterName = "Longitude", Value = entity.Longitude };
                     SqlParameter p_idMembre = new SqlParameter { ParameterName = "idMembre", Value = entity.idMembre };
-                    //SqlParameter p_DateCreation = new SqlParameter { ParameterName = "DateCreation", Value = entity.DateCreation };
 
                     command.Parameters.Add(p_titre);
                     command.Parameters.Add(p_DescCourte);

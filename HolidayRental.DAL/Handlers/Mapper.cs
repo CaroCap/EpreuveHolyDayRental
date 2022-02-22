@@ -31,7 +31,7 @@ namespace HolidayRental.DAL.Handlers
             {
                 idBien = (int)record[nameof(BienEchangeDAL.idBien)],
                 titre = (string)record[nameof(BienEchangeDAL.titre)],
-                DescCourte = (string)record[nameof(BienEchangeDAL.Prenom)],
+                DescCourte = (string)record[nameof(BienEchangeDAL.DescCourte)],
                 DescLong = (string)record[nameof(BienEchangeDAL.DescLong)],
                 NombrePerson = (int)record[nameof(BienEchangeDAL.NombrePerson)],
                 Pays = (int)record[nameof(BienEchangeDAL.Pays)],
@@ -69,7 +69,7 @@ namespace HolidayRental.DAL.Handlers
             if (record is null) return null;
             return new MembreDAL
             {
-                Id = (int)record[nameof(MembreDAL.Id)],
+                idMembre = (int)record[nameof(MembreDAL.idMembre)],
                 Nom = (string)record[nameof(MembreDAL.Nom)],
                 Prenom = (string)record[nameof(MembreDAL.Prenom)],
                 Email = (string)record[nameof(MembreDAL.Email)],

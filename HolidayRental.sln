@@ -1,11 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32112.339
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoliDayRental", "HomeShare\HoliDayRental.csproj", "{8020D524-9DA0-42F3-906F-C726363F865F}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HoliDayRental.DB", "HoliDayRental.DB\HoliDayRental.DB.sqlproj", "{86D984FC-8413-4724-93FC-BAAF7FCC59C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{4C078EC4-660A-43F4-BDEC-D68507FFC9BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{FC540781-E1F5-4CCE-8CAE-54AF44990F65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayRental.DAL", "HolidayRental.DAL\HolidayRental.DAL.csproj", "{E1BF81FF-5931-4C1A-BC6B-588A161B2C1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayRental.Common", "HolidayRental.Common\HolidayRental.Common.csproj", "{F52FEE70-BEFB-4B9D-86FE-4DD1C98B7FB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayRental.BLL", "HolidayRental.BLL\HolidayRental.BLL.csproj", "{FAEB1C74-B9A8-4EE4-9544-E9E88A84FCF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,9 +33,25 @@ Global
 		{86D984FC-8413-4724-93FC-BAAF7FCC59C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86D984FC-8413-4724-93FC-BAAF7FCC59C4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{86D984FC-8413-4724-93FC-BAAF7FCC59C4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E1BF81FF-5931-4C1A-BC6B-588A161B2C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1BF81FF-5931-4C1A-BC6B-588A161B2C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1BF81FF-5931-4C1A-BC6B-588A161B2C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1BF81FF-5931-4C1A-BC6B-588A161B2C1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F52FEE70-BEFB-4B9D-86FE-4DD1C98B7FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F52FEE70-BEFB-4B9D-86FE-4DD1C98B7FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F52FEE70-BEFB-4B9D-86FE-4DD1C98B7FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F52FEE70-BEFB-4B9D-86FE-4DD1C98B7FB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAEB1C74-B9A8-4EE4-9544-E9E88A84FCF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAEB1C74-B9A8-4EE4-9544-E9E88A84FCF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAEB1C74-B9A8-4EE4-9544-E9E88A84FCF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAEB1C74-B9A8-4EE4-9544-E9E88A84FCF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E1BF81FF-5931-4C1A-BC6B-588A161B2C1D} = {4C078EC4-660A-43F4-BDEC-D68507FFC9BE}
+		{FAEB1C74-B9A8-4EE4-9544-E9E88A84FCF0} = {FC540781-E1F5-4CCE-8CAE-54AF44990F65}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {27899870-7CEA-4A05-A2CC-D1884DDA0644}

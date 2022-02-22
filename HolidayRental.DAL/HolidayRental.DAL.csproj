@@ -8,8 +8,4 @@
     <ProjectReference Include="..\HolidayRental.Common\HolidayRental.Common.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Handlers\" />
-  </ItemGroup>
-
 </Project>

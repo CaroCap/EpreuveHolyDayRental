@@ -2,7 +2,7 @@
 
 namespace HolidayRental.DAL.Entities
 {
-    public class AvisMembreBien
+    public class AvisMembreBienDAL
     {
         public int idAvis { get; set; }
         public int note { get; set; }

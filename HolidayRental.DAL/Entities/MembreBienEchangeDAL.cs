@@ -3,7 +3,7 @@ using System;
 
 namespace HolidayRental.DAL.Entities
 {
-    public class MembreBienEchange
+    public class MembreBienEchangeDAL
     {
         public int idMembre { get; set; }
         public int idBien { get; set; }

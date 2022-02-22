@@ -1,7 +1,7 @@
 ﻿
 namespace HolidayRental.DAL.Entities
 {
-    public class Pays
+    public class PaysDAL
     {
         public int idPays { get; set; }
         public string Libelle { get; set; }

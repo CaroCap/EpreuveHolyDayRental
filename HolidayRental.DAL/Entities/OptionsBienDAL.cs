@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HolidayRental.DAL.Entities
 {
-    public class OptionsBien
+    public class OptionsBienDAL
     {
         public int idBien { get; set; }
         public int idOption { get; set; }

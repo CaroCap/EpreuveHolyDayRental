@@ -11,7 +11,7 @@ namespace HolidayRental.BLL.Entities
         public string Prenom { get; set; }
         public string Email { get; set; }
         public PaysBLL Pays { get; set; }
-        public int Pays_Id { get; set; }
+        public int idPays { get; set; }
         public string Telephone { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
@@ -27,8 +27,8 @@ namespace HolidayRental.BLL.Entities
             Prenom = prenom;
             Email = email;
             Pays = pays;
-            if (pays == null) throw new ArgumentNullException(nameof(Pays_Id));
-            Pays_Id = pays.idPays;
+            if (pays == null) throw new ArgumentNullException(nameof(idPays));
+            idPays = pays.idPays;
             Telephone = telephone;
             Login = login;
             Password = password;
@@ -40,7 +40,7 @@ namespace HolidayRental.BLL.Entities
             Nom = nom;
             Prenom = prenom;
             Email = email;
-            Pays_Id = paysID;
+            idPays = paysID;
             Telephone = telephone;
             Login = login;
             Password = password;

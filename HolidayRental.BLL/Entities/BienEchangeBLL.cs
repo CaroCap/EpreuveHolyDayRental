@@ -39,8 +39,8 @@ namespace HolidayRental.BLL.Entities
             DescLong = descLong;
             NombrePerson = nbrePerson;
             Pays = pays;
-            if (pays == null) throw new ArgumentNullException(nameof(Pays_Id));
-            Pays_Id = pays.idPays;
+            if (pays == null) throw new ArgumentNullException(nameof(idPays));
+            idPays = pays.idPays;
             Ville = ville;
             Rue = rue;
             Numero = num;
@@ -50,8 +50,8 @@ namespace HolidayRental.BLL.Entities
             Latitude = lat;
             Longitude = longitude;
             Membre = membre;
-            if (membre == null) throw new ArgumentNullException(nameof(Membre_Id));
-            Membre_Id = membre.idMembre;
+            if (membre == null) throw new ArgumentNullException(nameof(idMembre));
+            idMembre = membre.idMembre;
         }
 
         public BienEchangeBLL(int id, string titr, string descCourte, string descLong, int nbrePerson, int paysID, string ville, string rue, string num, string codeP, string photo, bool assurance, string lat, string longitude, int membreID)
@@ -61,7 +61,7 @@ namespace HolidayRental.BLL.Entities
             DescCourte = descCourte;
             DescLong = descLong;
             NombrePerson = nbrePerson;
-            Pays_Id = paysID;
+            idPays = paysID;
             Ville = ville;
             Rue = rue;
             Numero = num;
@@ -70,7 +70,7 @@ namespace HolidayRental.BLL.Entities
             AssuranceObligatoire = assurance;
             Latitude = lat;
             Longitude = longitude;
-            Membre_Id = membreID;
+            idMembre = membreID;
         }
     }
 }

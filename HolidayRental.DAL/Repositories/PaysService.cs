@@ -31,7 +31,7 @@ namespace HolidayRental.DAL.Repositories
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [idPays],[Libelle] WHERE [idPays] = @id";
+                    command.CommandText = "SELECT [idPays],[Libelle] FROM [Pays] WHERE [idPays] = @id";
                     SqlParameter p_id = new SqlParameter() { ParameterName = "id", Value = id };
                     command.Parameters.Add(p_id);
                     connection.Open();

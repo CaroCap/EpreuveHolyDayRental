@@ -1,8 +1,8 @@
 ﻿@model HoliDayRental.Models.HomeIndex
 
-@{
-    ViewData["Title"] = SessionHelper.GetObjectFromJson<string>(Context.Session, "Titre");
-}
+@*@{
+        ViewData["Title"] = SessionHelper.GetObjectFromJson<string>(Context.Session, "Titre");
+    }*@
 
 <div class="">
 
@@ -24,7 +24,7 @@
                 </div>*@
 
             @Html.Partial("_BienEchangeListPartial", Model.BiensEchanges)
-        @*<partial name="_BienEchangeListPartial" model=Model.BiensEchanges />*@
+            @*<partial name="_BienEchangeListPartial" model=Model.BiensEchanges />*@
 
         </div><!-- /sl-slider -->
 
@@ -68,14 +68,14 @@
 
                 </div>
                 @{
-                    if (SessionHelper.GetObjectFromJson<bool>(Context.Session, "IsLogged") != true)
-                    {
-                        @:<div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
-                            @:   <p>Rejoignez-nous et profitez des biens partout dans le monde.</p>
-                            @:   <button class="btn btn-info" data-toggle="modal" data-target="#loginpop">Se Connecter</button>        </div>
-                        @:</div>
+//if (SessionHelper.GetObjectFromJson<bool>(Context.Session, "IsLogged") != true)
+//{
+                            @:<div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
+                                @:   <p>Rejoignez-nous et profitez des biens partout dans le monde.</p>
+                                @:   <button class="btn btn-info" data-toggle="modal" data-target="#loginpop">Se Connecter</button>        </div>
+                            @:</div>
+                        @*}*@
                     }
-                }
 
             </div>
         </div>

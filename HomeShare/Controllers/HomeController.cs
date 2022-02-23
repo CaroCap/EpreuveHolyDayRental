@@ -1,7 +1,6 @@
 ﻿using HolidayRental.BLL.Entities;
 using HolidayRental.Common.Repositories;
 using HoliDayRental.Handlers;
-using HoliDayRental.Infrastructure.Helpers;
 using HoliDayRental.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -38,7 +37,7 @@ namespace HoliDayRental.Controllers
 
         public IActionResult Index()
         {
-            _httpContext.HttpContext.Session.SetObjectAsJson("Titre", "Welcome");
+            //_httpContext.HttpContext.Session.SetObjectAsJson("Titre", "Welcome");
 
             HomeIndex model = new HomeIndex();
 

@@ -94,7 +94,9 @@
                 <li><a href="#">Rechercher</a></li>
                 <li><a href="#">Visiter</a></li>
                 <li>@Html.ActionLink("Echanger", "Create", "BienEchange")</li>
-                <li><a href="#">S'enregistrer</a></li>
+                @*<li>@Html.ActionLink("S'enregistrer", "Create", "Membre")</li>*@
+                @*PROB AVEC MODEL ENVOYE DANS LE ACTION LINK*@ 
+                <li>@Html.ActionLink("S'enregistrer", "Register", "Account")</li>
             </ul>
         </div>
         <!-- #Header Starts -->

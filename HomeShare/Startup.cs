@@ -2,7 +2,7 @@ using HolidayRental.BLL.Entities;
 using HolidayRental.BLL.Services;
 using HolidayRental.Common.Repositories;
 using HolidayRental.DAL.Entities;
-using HoliDayRental.Infrastructure;
+using HoliDayRental.Handlers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -29,7 +29,7 @@ namespace HoliDayRental
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddSession(options =>
             {
@@ -39,7 +39,8 @@ namespace HoliDayRental
             });      //permet de configurer les sessions pour mon application
 
             services.AddControllersWithViews();
-
+            
+            // INJECTER LES DEPENDANCES ICI POUR QUE LES VUES FONCTIONNENT
             // Injection de dépendance pour la DAL
             services.AddScoped<IBienEchangeRepository<BienEchangeDAL>, HolidayRental.DAL.Repositories.BienEchangeService>();
             services.AddScoped<IMembreRepository<MembreDAL>, HolidayRental.DAL.Repositories.MembreService>();
@@ -48,6 +49,10 @@ namespace HoliDayRental
             services.AddScoped<IBienEchangeRepository<BienEchangeBLL>, BienEchangeService>();
             services.AddScoped<IMembreRepository<MembreBLL>, MembreService>();
             services.AddScoped<IPaysRepository<PaysBLL>, PaysService>();
+
+            // Pour Session Manager 
+            services.AddHttpContextAccessor();
+            services.AddScoped<SessionManager>();
 
         }
 
@@ -65,6 +70,8 @@ namespace HoliDayRental
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+
+            // SESSION
             app.UseSession(); //Permet d'utiliser le middlewate session pour notre application
             app.UseStaticFiles();
 

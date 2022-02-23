@@ -22,6 +22,11 @@ namespace HolidayRental.BLL.Services
             _PaysRepository = paysRepository;
         }
 
+        public int checkPassword(string login, string password)
+        {
+            return _MembreRepository.checkPassword(login, password);
+        }
+
         // Création du CRUD 
         public void Delete(int id)
         {

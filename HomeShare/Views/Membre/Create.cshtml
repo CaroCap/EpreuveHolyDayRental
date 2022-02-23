@@ -4,55 +4,65 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>MembreCreate</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nom" class="control-label"></label>
-                <input asp-for="Nom" class="form-control" />
-                <span asp-validation-for="Nom" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Prenom" class="control-label"></label>
-                <input asp-for="Prenom" class="form-control" />
-                <span asp-validation-for="Prenom" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label @*asp-for="Pays"*@ class="control-label"></label>
-                <div id="Pays" name="Pays">
-                    @Html.DropDownListFor(m => m.idPays, Model.PaysList.Select(d => new SelectListItem { Value = d.idPays.ToString(), Text = d.Libelle }), "Choisir un Pays ")
+<div id="loginpop">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col-sm-12 login">
+                    <h4>Enregistrez-vous</h4>
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Nom" class="control-label sr-only"></label>
+                            <input asp-for="Nom" class="form-control" placeholder="Smith" />
+                            <span asp-validation-for="Nom" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Prenom" class="control-label sr-only"></label>
+                            <input asp-for="Prenom" class="form-control" placeholder="Jhon" />
+                            <span asp-validation-for="Prenom" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label sr-only"></label>
+                            <input asp-for="Email" class="form-control" placeholder="jhon@example.com" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label @*asp-for="Pays"*@ class="control-label sr-only"></label>
+                            <div id="Pays" name="Pays">
+                                @Html.DropDownListFor(m => m.idPays, Model.PaysList.Select(d => new SelectListItem { Value = d.idPays.ToString(), Text = d.Libelle }), "Choisir un Pays ")
+                            </div>
+                            <span @*asp-validation-for="Pays"*@ class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Telephone" class="control-label sr-only"></label>
+                            <input asp-for="Telephone" class="form-control" placeholder="0478923316" />
+                            <span asp-validation-for="Telephone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Login" class="control-label sr-only"></label>
+                            <input asp-for="Login" class="form-control" placeholder="JhonSuper" />
+                            <span asp-validation-for="Login" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="control-label sr-only"></label>
+                            <input asp-for="Password" class="form-control" placeholder="Mot de passe" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> J'accepte les <a href="./Home/conditions">condition générale du site</a>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Créer un compte" class="btn btn-primary" />
+                        </div>
+                    </form>
                 </div>
-                <span @*asp-validation-for="Pays"*@ class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Telephone" class="control-label"></label>
-                <input asp-for="Telephone" class="form-control" />
-                <span asp-validation-for="Telephone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Login" class="control-label"></label>
-                <input asp-for="Login" class="form-control" />
-                <span asp-validation-for="Login" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 

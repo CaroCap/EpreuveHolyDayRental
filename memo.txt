@@ -1,0 +1,172 @@
+         ACTION LINK
+
+                @Html.ActionLink("Echanger", "Create", "BienEchange")
+		@Html.ActionLink("Les propriétaires", "ListeMembre", "Membre")
+
+
+	DETAILS   <img class="imgDetails" src="~/images/biens/@Html.DisplayFor(model => model.Photo)" />
+         INDEX     <img class="imgList" src="~/images/biens/@Html.DisplayFor(modelItem => item.Photo)" />
+
+                @Html.ActionLink("Details", "Details", new { id=item.idBien }) |
+
+
+@model IEnumerable<HoliDayRental.Models.BienEchangeListItem>
+
+
+@foreach (var item in Model)
+{
+    <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+        <div class="sl-slide-inner">
+            <div class="bg-img bg-img-1"></div>
+            <h2><a href="@Html.ActionLink("","Details", new { id = item.idBien })">@Html.DisplayFor(modelItem => item.titre)</a></h2>
+            <blockquote>
+                <p class="location">
+                    <span class="glyphicon glyphicon-map-marker"></span>
+                    @Html.DisplayFor(modelItem => item.Ville),
+                    @Html.DisplayFor(modelItem => item.NomPays)
+                </p>
+                <p>@Html.DisplayFor(modelItem => item.DescCourte)</p>
+                <cite>
+                    @Html.ActionLink("Échanger", "Details", new { id = item.idBien }) |
+                </cite>
+                <img class="imgList" src="~/images/biens/@Html.DisplayFor(modelItem => item.Photo)" />
+
+            </blockquote>
+        </div>
+    </div>
+}
+
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.titre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescCourte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombrePerson)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomPays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ville)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.titre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescCourte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombrePerson)
+            </td>
+            <td>
+                <img class="imgList" src="~/images/biens/@Html.DisplayFor(modelItem => item.Photo)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomPays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ville)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id=item.idBien }) |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+
+BIEN ECHANGE DETAILS
+
+@model HoliDayRental.Models.BienEchangeDetails
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>BienEchangeDetails</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.titre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.titre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DescCourte)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescCourte)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DescLong)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescLong)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombrePerson)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombrePerson)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ville)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ville)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodePostal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodePostal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+        <dd class = "col-sm-10">
+            <img class="imgDetails" src="~/images/biens/@Html.DisplayFor(model => model.Photo)" />
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

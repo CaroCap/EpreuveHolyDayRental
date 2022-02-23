@@ -21,9 +21,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.NomPays)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telephone)
-            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -39,13 +37,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.NomPays)
             </td>
+
             <td>
-                @Html.DisplayFor(modelItem => item.Telephone)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                @Html.ActionLink("Details", "Details", new { id=item.idMembre })
+                @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
             </td>
         </tr>
 }

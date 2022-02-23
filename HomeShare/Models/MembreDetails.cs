@@ -30,9 +30,11 @@ namespace HoliDayRental.Models
         [DisplayName("Téléphone")]
         public string Telephone { get; set; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Login")]
         public string Login { get; set; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Password")]
         public string Password { get; set; }
     }

@@ -31,7 +31,7 @@ namespace HolidayRental.BLL.Services
         public MembreBLL Get(int id)
         {
             MembreBLL result = _MembreRepository.Get(id).ToBLL();
-            result.Pays = _PaysRepository.Get(result.idPays).ToBLL();
+            result.Pays = _PaysRepository.Get(result.Pays_ID).ToBLL();
             return result;
         }
         public IEnumerable<MembreBLL> Get()
@@ -39,7 +39,7 @@ namespace HolidayRental.BLL.Services
             return _MembreRepository.Get().Select(d =>
             {
                 MembreBLL result = d.ToBLL();
-                result.Pays = _PaysRepository.Get(result.idPays).ToBLL();
+                result.Pays = _PaysRepository.Get(result.Pays_ID).ToBLL();
                 return result;
             });
         }

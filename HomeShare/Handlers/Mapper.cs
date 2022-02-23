@@ -56,5 +56,35 @@ namespace HoliDayRental.Handlers
                 Libelle = entity.Libelle
             };
         }
+
+        public static MembreListItem ToListItem(this MembreBLL entity)
+        {
+            if (entity == null) return null;
+            return new MembreListItem
+            {
+                idMembre = entity.idMembre,
+                Nom = entity.Nom,
+                Prenom = entity.Prenom,
+                Email = entity.Email,
+                idPays = entity.Pays.idPays,
+                Telephone = entity.Telephone
+            };
+        }
+
+        public static MembreDetails ToDetails(this MembreBLL entity)
+        {
+            if (entity == null) return null;
+            return new MembreDetails
+            {
+                idMembre = entity.idMembre,
+                Nom = entity.Nom,
+                Prenom = entity.Prenom,
+                Email = entity.Email,
+                idPays = entity.Pays.idPays,
+                Telephone = entity.Telephone,
+                Login = entity.Login,
+                Password = entity.Password
+            };
+        }
     }
 }

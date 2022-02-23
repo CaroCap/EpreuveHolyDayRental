@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HoliDayRental.Models
 {
-    public class MembreDetails
+    public class MembreListItem
     {
         [ScaffoldColumn(false)]
         [Key]
@@ -17,6 +17,7 @@ namespace HoliDayRental.Models
         [DisplayName("Prénom")]
         public string Prenom { get; set; }
 
+        [ScaffoldColumn(false)]
         [DisplayName("Email")]
         public string Email { get; set; }
 
@@ -30,10 +31,5 @@ namespace HoliDayRental.Models
         [DisplayName("Téléphone")]
         public string Telephone { get; set; }
 
-        [DisplayName("Login")]
-        public string Login { get; set; }
-
-        [DisplayName("Password")]
-        public string Password { get; set; }
     }
 }

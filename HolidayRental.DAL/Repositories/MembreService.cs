@@ -48,7 +48,7 @@ namespace HolidayRental.DAL.Repositories
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [idBien],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] FROM [Membre]";
+                    command.CommandText = "SELECT [idMembre],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] FROM [Membre]";
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read()) yield return Mapper.ToMembre(reader);

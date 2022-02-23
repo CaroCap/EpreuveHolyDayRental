@@ -32,7 +32,7 @@ namespace HolidayRental.BLL.Handlers
                 Nom = entity.Nom,
                 Prenom = entity.Prenom,
                 Email = entity.Email,
-                Pays = entity.Pays.idPays,
+                Pays = entity.idPays,
                 Telephone = entity.Telephone,
                 Login = entity.Login,
                 Password = entity.Password

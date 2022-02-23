@@ -160,3 +160,11 @@ h2{font-size: 25px;}
 .imgList{
     width:250px;
 }
+
+.lienEchangeHome a{
+    color:white;
+}
+.lienEchangeHome:hover a {
+    color:deeppink;
+    text-decoration:none;
+}

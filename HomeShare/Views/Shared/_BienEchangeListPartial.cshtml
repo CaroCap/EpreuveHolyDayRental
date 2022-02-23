@@ -1,0 +1,25 @@
+﻿@model IEnumerable<HoliDayRental.Models.BienEchangeListItem>
+
+
+@foreach (var item in Model)
+{
+    <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+        <div class="sl-slide-inner">
+            <div class="bg-img" style="background-image:url('/images/biens/@Html.DisplayFor(modelItem => item.Photo)')"></div>
+            <h2><a href="@Html.ActionLink("","Details", new { id = item.idBien })">@Html.DisplayFor(modelItem => item.titre)</a></h2>
+            <blockquote>
+                <p class="location">
+                    <span class="glyphicon glyphicon-map-marker"></span>
+                    @Html.DisplayFor(modelItem => item.Ville),
+                    @Html.DisplayFor(modelItem => item.NomPays)
+                </p>
+                <p>@Html.DisplayFor(modelItem => item.DescCourte)</p>
+                <cite class="lienEchangeHome">
+                    @Html.ActionLink("Échanger", "Details", "BienEchange", new { id = item.idBien })
+                </cite>
+                <img class="imgList" src="~/images/biens/@Html.DisplayFor(modelItem => item.Photo)" />
+
+            </blockquote>
+        </div>
+    </div>
+}

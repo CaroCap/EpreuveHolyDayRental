@@ -12,7 +12,7 @@ namespace HolidayRental.BLL.Entities
         public string DescLong { get; set; }
         public int NombrePerson { get; set; }
         public PaysBLL Pays { get; set; }
-        public int idPays { get; set; }
+        public int Pays_ID { get; set; }
         public string Ville { get; set; }
         public string Rue { get; set; }
         public string Numero { get; set; }
@@ -24,7 +24,7 @@ namespace HolidayRental.BLL.Entities
         public string Latitude { get; set; }
         public string Longitude { get; set; }
         public MembreBLL Membre { get; set; }
-        public int idMembre { get; set; }
+        public int Membre_ID { get; set; }
         public DateTime DateCreation { get; set; }
 
 
@@ -39,8 +39,8 @@ namespace HolidayRental.BLL.Entities
             DescLong = descLong;
             NombrePerson = nbrePerson;
             Pays = pays;
-            if (pays == null) throw new ArgumentNullException(nameof(idPays));
-            idPays = pays.idPays;
+            if (pays == null) throw new ArgumentNullException(nameof(Pays_ID));
+            Pays_ID = pays.idPays;
             Ville = ville;
             Rue = rue;
             Numero = num;
@@ -50,8 +50,8 @@ namespace HolidayRental.BLL.Entities
             Latitude = lat;
             Longitude = longitude;
             Membre = membre;
-            if (membre == null) throw new ArgumentNullException(nameof(idMembre));
-            idMembre = membre.idMembre;
+            if (membre == null) throw new ArgumentNullException(nameof(Membre_ID));
+            Membre_ID = membre.idMembre;
         }
 
         public BienEchangeBLL(int id, string titr, string descCourte, string descLong, int nbrePerson, int paysID, string ville, string rue, string num, string codeP, string photo, bool assurance, string lat, string longitude, int membreID)
@@ -61,7 +61,7 @@ namespace HolidayRental.BLL.Entities
             DescCourte = descCourte;
             DescLong = descLong;
             NombrePerson = nbrePerson;
-            idPays = paysID;
+            Pays_ID = paysID;
             Ville = ville;
             Rue = rue;
             Numero = num;
@@ -70,7 +70,7 @@ namespace HolidayRental.BLL.Entities
             AssuranceObligatoire = assurance;
             Latitude = lat;
             Longitude = longitude;
-            idMembre = membreID;
+            Membre_ID = membreID;
         }
     }
 }

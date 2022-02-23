@@ -20,11 +20,18 @@ namespace HoliDayRental.Models
         [DisplayName("Capacité")]
         public int NombrePerson { get; set; }
         
-        [ScaffoldColumn(false)]
-        public int idPays { get; set; }
-        
         [DisplayName("Photo")]
         public string Photo { get; set; }
+        public string Ville { get; set; }
+
+
+        [ScaffoldColumn(false)]
+        public int idPays { get; set; }
+        public Pays Pays { get; set; }
+
+        [DisplayName("Pays")]
+        public string NomPays { get { return this.Pays.Libelle; } }
+
 
     }
 }

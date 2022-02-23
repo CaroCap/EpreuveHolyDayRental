@@ -33,8 +33,8 @@ namespace HolidayRental.BLL.Services
         public BienEchangeBLL Get(int id)
         {
             BienEchangeBLL result = _BienEchangeRepository.Get(id).ToBLL();
-            result.Membre = _MembreRepository.Get(result.idMembre).ToBLL();
-            result.Pays = _PaysRepository.Get(result.idPays).ToBLL();
+            result.Membre = _MembreRepository.Get(result.Membre_ID).ToBLL();
+            result.Pays = _PaysRepository.Get(result.Pays_ID).ToBLL();
             return result;
         }
         public IEnumerable<BienEchangeBLL> Get()
@@ -42,8 +42,8 @@ namespace HolidayRental.BLL.Services
             return _BienEchangeRepository.Get().Select(d =>
             {
                 BienEchangeBLL result = d.ToBLL();
-                result.Membre = _MembreRepository.Get(result.idMembre).ToBLL();
-                result.Pays = _PaysRepository.Get(result.idPays).ToBLL();
+                result.Membre = _MembreRepository.Get(result.Membre_ID).ToBLL();
+                result.Pays = _PaysRepository.Get(result.Pays_ID).ToBLL();
                 return result;
             });
         }

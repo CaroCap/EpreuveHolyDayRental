@@ -19,7 +19,8 @@ namespace HoliDayRental.Handlers
                 DescCourte = entity.DescCourte,
                 idPays = entity.Pays.idPays,
                 NombrePerson = entity.NombrePerson,
-                Photo = entity.Photo
+                Photo = entity.Photo,
+                Ville = entity.Ville
             };
         }
 
@@ -42,7 +43,17 @@ namespace HoliDayRental.Handlers
                 AssuranceObligatoire = entity.AssuranceObligatoire,
                 Latitude = entity.Latitude,
                 Longitude = entity.Longitude,
-                idMembre = entity.Membre.idMembre
+                idMembre = entity.Membre.idMembre,
+            };
+        }
+
+        public static Pays ToDetails(this PaysBLL entity)
+        {
+            if (entity == null) return null;
+            return new Pays
+            {
+                idPays = entity.idPays,
+                Libelle = entity.Libelle
             };
         }
     }

@@ -71,7 +71,7 @@ namespace HolidayRental.BLL.Handlers
                 titre = entity.titre,
                 DescCourte = entity.DescCourte,
                 DescLong = entity.DescLong,
-                Pays = entity.Pays.idPays,
+                Pays = entity.Pays_ID,
                 NombrePerson = entity.NombrePerson,
                 Ville = entity.Ville,
                 Rue = entity.Rue,
@@ -81,7 +81,7 @@ namespace HolidayRental.BLL.Handlers
                 AssuranceObligatoire = entity.AssuranceObligatoire,
                 Latitude = entity.Latitude,
                 Longitude = entity.Longitude,
-                idMembre = entity.Membre.idMembre
+                idMembre = entity.Membre_ID
             };
         }
 

@@ -9,6 +9,9 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+@*@Html.Partial("_BienEchangeListPartial")*@
+
 <table class="table">
     <thead>
         <tr>
@@ -43,9 +46,7 @@
                 <img class="imgList" src="~/images/biens/@Html.DisplayFor(modelItem => item.Photo)" />
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { id=item.idBien }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
 }

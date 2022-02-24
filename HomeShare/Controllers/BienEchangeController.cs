@@ -144,5 +144,6 @@ namespace HoliDayRental.Controllers
                 return View();
             }
         }
+
     }
 }

@@ -70,15 +70,6 @@
                         <li><a target="_blank" href="https://www.interface3.be">A propos de nous</a></li>
                         <li>@Html.ActionLink("Les propriétaires", "ListeMembre", "Membre")</li>
                         <li>@Html.ActionLink("Les biens échangés", "ListeBiens", "BienEchange")</li>
-                        @if (!sessionManager.IsConnected)
-                        {
-                            <div>Bonjour </div>
-
-                        }
-                        else
-                        {
-                            <li>@Html.ActionLink("Déconnexion", "Logout", "Account")</li>
-                        }
                         @*<li><a href="#">Contactez-nous</a></li>*@
                     </ul>
                 </div>

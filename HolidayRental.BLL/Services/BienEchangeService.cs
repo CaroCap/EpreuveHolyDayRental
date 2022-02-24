@@ -53,6 +53,17 @@ namespace HolidayRental.BLL.Services
             return _BienEchangeRepository.Insert(entity.ToDAL());
         }
 
+        public IEnumerable<BienEchangeBLL> Last5Biens()
+        {
+            return _BienEchangeRepository.Last5Biens().Select(d =>
+            {
+                BienEchangeBLL result = d.ToBLL();
+                result.Membre = _MembreRepository.Get(result.Membre_ID).ToBLL();
+                result.Pays = _PaysRepository.Get(result.Pays_ID).ToBLL();
+                return result;
+            }); 
+        }
+
         public void Update(int id, BienEchangeBLL entity)
         {
             _BienEchangeRepository.Update(id, entity.ToDAL());

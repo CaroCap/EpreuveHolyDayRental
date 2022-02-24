@@ -100,6 +100,24 @@ namespace HolidayRental.DAL.Repositories
             }
         }
 
+        public IEnumerable<BienEchangeDAL> Last5Biens()
+        {
+            using (SqlConnection connection = new SqlConnection(_connString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT * FROM [Vue_CinqDernierBiens]";
+                    //Parameters...
+                    
+                    connection.Open();
+                    //Choose Execution method
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read()) yield return Mapper.ToBienEchange(reader);
+                }
+            }
+
+        }
+
         public void Update(int id, BienEchangeDAL entity)
         {
             using (SqlConnection connection = new SqlConnection(_connString))

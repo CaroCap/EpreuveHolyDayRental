@@ -43,12 +43,27 @@ namespace HoliDayRental.Controllers
 
             model.BiensEchanges = _BienEchangeService.Get().Select(c => c.ToListItem());
             model.BiensEchanges = model.BiensEchanges.Select(m => { m.Pays = _PaysService.Get((int)m.idPays).ToDetails(); return m; });
+
+            model.BienEchange5Last = _BienEchangeService.Last5Biens().Select(c => c.ToListItem());
+            model.BienEchange5Last = model.BienEchange5Last.Select(m => { m.Pays = _PaysService.Get((int)m.idPays).ToDetails(); return m; });
             return View(model);
         }
 
         public IActionResult conditions()
         {
             return View();
+        }
+
+        [Route("Last")]
+        public IActionResult Last5Bien()
+        {
+            HomeIndex model = new HomeIndex();
+
+            model.BiensEchanges = _BienEchangeService.Last5Biens().Select(c => c.ToListItem());
+            //model.BienEchange5Last = _BienEchangeService.Last5Biens().Select(c => c.ToListItem5());
+            model.BienEchange5Last = model.BiensEchanges.Select(m => { m.Pays = _PaysService.Get((int)m.idPays).ToDetails(); return m; });
+            return View(model);
+
         }
     }
 }

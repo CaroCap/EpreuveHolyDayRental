@@ -24,6 +24,19 @@ namespace HoliDayRental.Handlers
             };
         }
 
+        //public static BienEchange5Last ToListItem5(this BienEchangeBLL entity)
+        //{
+        //    if (entity == null) return null;
+        //    return new BienEchange5Last
+        //    {
+        //        idBien = entity.idBien,
+        //        titre = entity.titre,
+        //        Photo = entity.Photo,
+        //        Ville = entity.Ville,
+        //        idPays = entity.Pays.idPays
+        //    };
+        //}
+
         public static BienEchangeDetails ToDetails(this BienEchangeBLL entity)
         {
             if (entity == null) return null;

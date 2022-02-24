@@ -1,4 +1,5 @@
 ﻿using HolidayRental.BLL.Entities;
+using HoliDayRental.Models;
 using Microsoft.AspNetCore.Http;
 using System.Text.Json;
 
@@ -23,6 +24,16 @@ namespace HoliDayRental.Handlers
             {
                 return JsonSerializer.Deserialize<MembreBLL>(_session.Get(nameof(User)));
             }
+        }
+
+        public void SetUser(ConnectionForm form)
+        {
+            _session.SetString("user", form.Login);
+        }
+
+        public void ForgetUser()
+        {
+            _session.Remove("user");
         }
 
     }

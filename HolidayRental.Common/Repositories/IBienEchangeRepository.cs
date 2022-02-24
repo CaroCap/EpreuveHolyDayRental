@@ -6,6 +6,6 @@ namespace HolidayRental.Common.Repositories
 {
     public interface IBienEchangeRepository<TBienEchange> : IRepository<TBienEchange, int>
     {
-        
+        IEnumerable<TBienEchange> Last5Biens();
     }
 }

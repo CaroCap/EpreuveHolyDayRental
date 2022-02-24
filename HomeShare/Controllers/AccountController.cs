@@ -52,6 +52,8 @@ namespace HoliDayRental.Controllers
         {
             //ValidateLoginForm(form, ModelState);
             if (!ModelState.IsValid) return View();
+            //Session Manager
+            _session.SetUser(form);
             //Création d'une méthode CheckPassword 
             int id = _MembreService.checkPassword(form.Login, form.Password);
             if (id == -1) return View();

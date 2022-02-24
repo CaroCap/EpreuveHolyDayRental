@@ -11,6 +11,7 @@ namespace HoliDayRental.Models
         public IEnumerable<Pays> ListPays { get; set; }
         public IEnumerable<MembreDetails> Membres { get; set; }
         public ConnectionForm Connection { get; set; }
+        public MembreCreate CreationMembre { get; set; }
 
         //public IEnumerable<CategoriesDetails> Categories { get; set; }
     }

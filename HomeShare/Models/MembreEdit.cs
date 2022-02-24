@@ -6,22 +6,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HoliDayRental.Models
 {
-    public class MembreCreate
+    public class MembreEdit
     {
-
         [Required]
         [DisplayName("Nom")]
-        [DataType(DataType.Text)]
         public string Nom { get; set; }
 
         [Required]
         [DisplayName("Prénom")]
-        [DataType(DataType.Text)]
         public string Prenom { get; set; }
 
         [Required]
         [DisplayName("Email")]
-        [DataType(DataType.Text)]
         public string Email { get; set; }
 
         [ScaffoldColumn(false)]
@@ -32,21 +28,13 @@ namespace HoliDayRental.Models
 
         [Required]
         [DisplayName("Téléphone")]
-        [DataType(DataType.PhoneNumber)]
         public string Telephone { get; set; }
 
-        [Required(ErrorMessage = "Le login est obligatoire.")]
+        [Required]
         [DisplayName("Login")]
-        [DataType(DataType.Text)]
         public string Login { get; set; }
 
-        [Required(ErrorMessage = "Le mot de passe est obligatoire.")]
-        [DisplayName("Password")]
-        [DataType(DataType.Password)]
+        [DisplayName("Nouveau Password")]
         public string Password { get; set; }
-
-        public ConnectionForm Connection { get; set; }
-
-        public bool CheckCondition { get; set; }
     }
 }

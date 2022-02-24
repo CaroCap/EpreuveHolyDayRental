@@ -86,5 +86,31 @@ namespace HoliDayRental.Handlers
                 Password = entity.Password
             };
         }
+
+        public static MembreEdit ToEdit(this MembreBLL entity)
+        {
+            if (entity == null) return null;
+            return new MembreEdit
+            {
+                Nom = entity.Nom,
+                Prenom = entity.Prenom,
+                Email = entity.Email,
+                idPays = entity.Pays.idPays,
+                Telephone = entity.Telephone,
+                Login = entity.Login,
+                Password = entity.Password
+            };
+        }
+
+        public static MembreDelete ToDelete(this MembreBLL entity)
+        {
+            if (entity == null) return null;
+            return new MembreDelete
+            {
+                Nom = entity.Nom,
+                Prenom = entity.Prenom,
+                Login = entity.Login
+            };
+        }
     }
 }

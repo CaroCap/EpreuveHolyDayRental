@@ -45,6 +45,11 @@ namespace HoliDayRental.Controllers
             model.BiensEchanges = model.BiensEchanges.Select(m => { m.Pays = _PaysService.Get((int)m.idPays).ToDetails(); return m; });
             return View(model);
         }
+
+        public IActionResult conditions()
+        {
+            return View();
+        }
     }
 }
 

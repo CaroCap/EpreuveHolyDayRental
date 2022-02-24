@@ -168,3 +168,25 @@ h2{font-size: 25px;}
     color:deeppink;
     text-decoration:none;
 }
+
+.btnAction a {
+    background: #72b70f;
+    border: 1px solid #72b70f;
+    padding: 6px 20px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+    font-family: din;
+    outline: none;
+    color: #ffffff;
+    border-color: #4cae4c;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+}

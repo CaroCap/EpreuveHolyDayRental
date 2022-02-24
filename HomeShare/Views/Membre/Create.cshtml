@@ -52,7 +52,7 @@
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox"> J'accepte les <a href="./Home/conditions">condition générale du site</a>
+                                <input asp-for="CheckCondition" type="checkbox"> J'accepte les @Html.ActionLink("conditions générales du site", "conditions", "Home")
                             </label>
                         </div>
 
@@ -66,6 +66,8 @@
     </div>
 </div>
 
+<button class="btn btn-info" data-toggle="modal" data-target="#loginpop">Se Connecter</button>
+
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
@@ -73,3 +75,5 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+<partial name="_LoginModal" model=Model.Connection />

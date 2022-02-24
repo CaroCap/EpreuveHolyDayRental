@@ -71,6 +71,7 @@ namespace HoliDayRental.Controllers
             try
             {
                 if (!ModelState.IsValid) throw new Exception();
+                if (!collection.CheckCondition) throw new ArgumentException("Merci d'accepter les conditions");
                 MembreBLL result = new MembreBLL(
                     0,
                     collection.Nom,
@@ -95,42 +96,70 @@ namespace HoliDayRental.Controllers
         // GET: MembreController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            MembreEdit model = this._MembreService.Get(id).ToEdit();
+            model.PaysList = _PaysService.Get().Select(s => s.ToDetails());
+
+            return View(model);
         }
 
         // POST: MembreController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, MembreEdit collection)
         {
+            //Avant d'envoyer les nouvelles valeurs,
+            //comme notre formulaire ne contient pas toutes les données (Ex.: Login, BirthDate, ...)
+            //il nous faut recharger ces données dans une variable 
+            MembreBLL result = this._MembreService.Get(id);
             try
             {
+                if (result is null) throw new Exception("Pas d'étudiant avec cet identifiant");
+                if (!(ModelState.IsValid)) throw new Exception();
+                //Les tests de validations étant correct, on mets à jour l'étudiant 'result' avant l'envois dans la DB
+                result.Nom = collection.Nom;
+                result.Prenom = collection.Prenom;
+                result.Email = collection.Email;
+                result.Pays_ID = collection.idPays;
+                result.Telephone = collection.Telephone;
+                result.Login = collection.Login;
+                if (collection.Password is not null) result.Password = collection.Password;
+                this._MembreService.Update(id, result);
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exception e)
             {
-                return View();
+                ViewBag.Error = e.Message;
+                if (result is null) return RedirectToAction(nameof(Index));
+                collection.PaysList = _PaysService.Get().Select(s => s.ToDetails());
+                return View(result.ToEdit());
             }
         }
 
         // GET: MembreController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            MembreDelete model = this._MembreService.Get(id).ToDelete();
+            return View(model);
         }
 
         // POST: MembreController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, MembreDelete collection)
         {
+            MembreBLL result = this._MembreService.Get(id);
             try
             {
+                if (result is null) throw new Exception("Pas d'étudiant avec cet identifiant.");
+                if (!ModelState.IsValid) throw new Exception();
+                if (!collection.Validate) throw new Exception("Action non validée...");
+                this._MembreService.Delete(id);
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception e)
             {
-                return View();
+                ViewBag.Error = e.Message;
+                return RedirectToAction(nameof(Index));
             }
         }
     }

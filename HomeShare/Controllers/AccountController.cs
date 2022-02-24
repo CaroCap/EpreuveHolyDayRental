@@ -48,7 +48,7 @@ namespace HoliDayRental.Controllers
         ///// <param name="formCollection"></param>
         ///// <returns></returns>
         [HttpPost]
-        public IActionResult Register(ConnectionForm form)
+        public IActionResult Login(ConnectionForm form)
         {
             //ValidateLoginForm(form, ModelState);
             if (!ModelState.IsValid) return View();
@@ -62,7 +62,7 @@ namespace HoliDayRental.Controllers
         public IActionResult LogOut()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index");
         }
 
         //Exemple d'ajout de valeur pour une session permettant de spécifier que l'utilisateur est connecté

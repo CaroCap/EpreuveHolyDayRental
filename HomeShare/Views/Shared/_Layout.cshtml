@@ -1,4 +1,6 @@
-﻿
+﻿@using HoliDayRental.Handlers
+@inject SessionManager sessionManager
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +16,8 @@
 
     <!--Map-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin="" />
 
     <!-- Owl stylesheet -->
     <link rel="stylesheet" href="/lib/owl-carousel/owl.carousel.css">
@@ -30,10 +32,10 @@
     <script type="text/javascript" src="/lib/slitslider/js/jquery.slitslider.js"></script>
     <!-- slitslider -->
     <!-- Map -->
-        <!--- Map js -->
+    <!--- Map js -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
 
 </head>
 
@@ -62,12 +64,21 @@
                 <div class="navbar-collapse  collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active">
-                            @Html.ActionLink("Home","Index","Home");
+                            @Html.ActionLink("Home", "Index", "Home");
 
-                        </li> 
+                        </li>
                         <li><a target="_blank" href="https://www.interface3.be">A propos de nous</a></li>
                         <li>@Html.ActionLink("Les propriétaires", "ListeMembre", "Membre")</li>
                         <li>@Html.ActionLink("Les biens échangés", "ListeBiens", "BienEchange")</li>
+                        @if (!sessionManager.IsConnected)
+                        {
+                            <div>Bonjour </div>
+
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Déconnexion", "Logout", "Account")</li>
+                        }
                         @*<li><a href="#">Contactez-nous</a></li>*@
                     </ul>
                 </div>
@@ -88,12 +99,20 @@
         <!-- Header Starts -->
         <div class="header">
             <img src="/images/logo.png" alt="Realestate">
-            
+
             <ul class="pull-right">
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 @*<li><a href="#">Rechercher</a></li>*@
                 <li>@Html.ActionLink("Echanger", "Create", "BienEchange")</li>
-                <li>@Html.ActionLink("S'enregistrer", "Login", "Account")</li>
+                @if (!sessionManager.IsConnected)
+                {
+                    <li>@Html.ActionLink("Se Connecter", "Login", "Account")</li>
+
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Déconnexion", "Logout", "Account")</li>
+                }
             </ul>
         </div>
         <!-- #Header Starts -->

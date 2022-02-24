@@ -34,7 +34,7 @@ namespace HoliDayRental.Controllers
         }
 
         //LOGIN & SESSION
-        public IActionResult Register()
+        public IActionResult Login()
         {
             if (_session.IsConnected) return RedirectToAction("Index", "Home");
             return View();

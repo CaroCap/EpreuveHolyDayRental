@@ -60,13 +60,18 @@
                             <input type="submit" value="Créer un compte" class="btn btn-primary" />
                         </div>
                     </form>
+                    <div class="col-sm-6">
+                        <h4>Déjà un compte?</h4>
+                        <p>Connectez vous maintenant et profitez des propriétés de nos membres.</p>
+                        <span class="btnAction">@Html.ActionLink("Se connecter", "Login", "Account")</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<button class="btn btn-info" data-toggle="modal" data-target="#loginpop">Se Connecter</button>
+
 
 <div>
     <a asp-action="Index">Back to List</a>
@@ -75,5 +80,3 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-
-<partial name="_LoginModal" model=Model.Connection />

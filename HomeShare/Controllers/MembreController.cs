@@ -115,7 +115,7 @@ namespace HoliDayRental.Controllers
             {
                 if (result is null) throw new Exception("Pas d'étudiant avec cet identifiant");
                 if (!(ModelState.IsValid)) throw new Exception();
-                //Les tests de validations étant correct, on mets à jour l'étudiant 'result' avant l'envois dans la DB
+                //Les tests de validations étant correct, on met à jour l'étudiant 'result' avant l'envoi dans la DB
                 result.Nom = collection.Nom;
                 result.Prenom = collection.Prenom;
                 result.Email = collection.Email;

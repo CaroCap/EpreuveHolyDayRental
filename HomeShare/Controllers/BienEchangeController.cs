@@ -16,6 +16,8 @@ namespace HoliDayRental.Controllers
         private readonly IBienEchangeRepository<BienEchangeBLL> _BienEchangeService;
         //private readonly IMembreRepository<MembreBLL> _MembreService;
         private readonly IPaysRepository<PaysBLL> _PaysService;
+        private readonly SessionManager _session;
+
         //public BienEchangeController(IBienEchangeRepository<BienEchangeBLL> bienEchangeService, IMembreRepository<MembreBLL> membreService, IPaysRepository<PaysBLL> paysService)
         //{
         //    _BienEchangeService = bienEchangeService;
@@ -23,11 +25,11 @@ namespace HoliDayRental.Controllers
         //    _PaysService = paysService;
         //}
 
-        public BienEchangeController(IBienEchangeRepository<BienEchangeBLL> bienEchangeService, IPaysRepository<PaysBLL> paysService)
+        public BienEchangeController(IBienEchangeRepository<BienEchangeBLL> bienEchangeService, IPaysRepository<PaysBLL> paysService, SessionManager session)
         {
             _BienEchangeService = bienEchangeService;
             _PaysService = paysService;
-
+            _session = session;
         }
 
         // GET: BienEchangeController
@@ -58,11 +60,14 @@ namespace HoliDayRental.Controllers
         // GET: BienEchangeController/Create
         public IActionResult Create()
         {
+            // Si pas connecté => pas possible de créer un bien !
+            if (!_session.IsConnected) return RedirectToAction("Login", "Account");
             BienEchangeCreate model = new BienEchangeCreate();
             // On va utiliser linQ pour aller récupérer la catégorie de notre student = .Select
             // On va utiliser LinQ pour n'avoir qu'une seule fois chaque élément = .Distinct
             // On peut ajouter ToList() ou ToArray() si besoin mais nous on veut IEnumerable donc pas besoin
             model.PaysList = _PaysService.Get().Select(s => s.ToDetails());
+            model.idMembre = 1;
            
             return View(model);
         }
